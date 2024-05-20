@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bege: #ecd8b5d3;
+    --green-gray: #2C2C26;
+    --green-pastel: #546d73d3;
+    --white-gray: #DCD9D2;
+    --sapphire: #004DC3;
+    --brown: #7C5933;
+}
+
+.background-bege {
+    background-color: var(--bege);
+}
+
+.background-green-pastel {
+    background-color: var(--green-pastel);
+}
+
+body {
+    background-image: url(./assets/bg-restaurant.jpg);
+    background-size: cover;
+}
