@@ -6,7 +6,7 @@ import Instructions from "./components/Instructions";
 import Ingredients from "./components/Ingredients";
 import Video from "./components/Video";
 
-// investigar net::ERR_BLOCKED_BY_CLIENT ytb
+// investigar net::ERR_BLOCKED_BY_CLIENT ytb, don't display video if empty, don't display "|" if no measure.
 
 function App() {
   const [currentMeal, setCurrentMeal] = useState([]);

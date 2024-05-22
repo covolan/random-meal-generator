@@ -14,7 +14,6 @@ export default function Video({ getSimpleInformation }) {
         className=""
         width="100%"
         height="90%"
-        frameborder="0"
       ></iframe>
     </div>
   );
