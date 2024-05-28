@@ -1,7 +1,7 @@
 export default function Title({getSimpleInformation}) {
   return (
-    <div className="meal__title text-xl rounded-t-lg font-bold mr-auto ml-auto mt-20 p-5 background-bege">
-      <h1>{getSimpleInformation("strMeal")}</h1>
+    <div className="meal__title text-2xl text-teal-950 text-center font-bold p-3">
+      <h1>{getSimpleInformation("strArea")} | {getSimpleInformation("strMeal")}</h1>
     </div>
   );
 }

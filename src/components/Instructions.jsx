@@ -1,4 +1,4 @@
-export default function Instructions({getSimpleInformation}) {
+export default function Instructions({ getSimpleInformation }) {
   const getMealInstructions = (meal) => {
     let instructions = getSimpleInformation(meal);
     instructions = instructions.split("\r\n");
@@ -14,9 +14,11 @@ export default function Instructions({getSimpleInformation}) {
       </>
     );
   };
-  
+
   return (
-    <div className="meal__description font-normal text-lg md:max-h-[420px] overflow-auto md:rounded-tr-lg indent-5 md:indent-8 text-justify p-4 md:p-5 lg:col-span-7 col-span-6">
+    <div className="meal__description text-teal-800 font-medium text-lg md:max-h-[600px] overflow-auto indent-5 text-justify p-3">
+      {" "}
+      <h1 className="text-center text-xl font-bold text-teal-900">Instructions</h1>
       {getMealInstructions("strInstructions")}
     </div>
   );

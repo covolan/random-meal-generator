@@ -22,7 +22,8 @@ export default function Ingredients({ currentMeal }) {
   };
 
   return (
-    <div className="meal__ingredients text-lg font-semibold md:rounded-bl-lg p-3 md:p-4 text-center col-span-3 background-green-pastel">
+    <div className="meal__ingredients text-teal-800 text-lg font-semibold p-3 text-center">
+      <h1 className="text-xl font-bold text-teal-900 pb-2">Ingredients</h1>
       {currentMeal.map((item) => {
         return (
           <div key={item.idMeal} className="current-meal">

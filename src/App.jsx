@@ -29,20 +29,31 @@ function App() {
 
   return (
     <>
-      <div className="main-div flex flex-col font-sans justify-center">
+      <div
+        className={
+          "main-div flex flex-col font-sans bg-primary md:mx-5 " +
+          (currentMeal.length == 0 ? "h-dvh" : "h-full")
+        }
+      >
         <Button fetchData={fetchData} />
         {currentMeal.length == 0 ? null : (
           <>
-            <Title getSimpleInformation={getSimpleInformation} />
-            <div className="meals background-bege rounded-lg col-auto grid mx-5 grid-rows-2 grid-cols-10 max-md:grid-rows-5 max-md:grid-cols-1 ">
-              <Image
-                currentMeal={currentMeal}
-                getSimpleInformation={getSimpleInformation}
-              />
-              <Instructions getSimpleInformation={getSimpleInformation} />
-              <Ingredients currentMeal={currentMeal} />
-              <Video getSimpleInformation={getSimpleInformation} />
-              <div className="meal__extra md:rounded-br-lg background-green-pastel col-span-2"></div>
+            <div className="meals bg-white md:m-2 mt-10 md:mt-10 md:p-5 rounded-3xl">
+              <Title getSimpleInformation={getSimpleInformation} />
+              <div className="main-content grid lg:grid-cols-10">
+                <div className="left-items p-2 lg:col-span-3">
+                  <Image
+                    currentMeal={currentMeal}
+                    getSimpleInformation={getSimpleInformation}
+                  />
+                  <Ingredients currentMeal={currentMeal} />
+                </div>
+                <div className="right-items p-2 lg:col-span-7">
+                  <Instructions getSimpleInformation={getSimpleInformation} />
+                  <Video getSimpleInformation={getSimpleInformation} />
+                </div>
+              </div>
+              {/* <div className="meal__extra md:rounded-br-lg background-green-pastel col-span-2"></div> */}
             </div>
           </>
         )}

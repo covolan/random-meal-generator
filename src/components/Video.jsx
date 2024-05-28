@@ -8,12 +8,12 @@ export default function Video({ getSimpleInformation }) {
   };
 
   return (
-    <div className="meal__video background-green-pastel content-center col-span-5">
+    <div className="meal__video p-3 content-center h-[300px] sm:h-[400px] md:h-[500px] ">
       <iframe
         src={generateYTBLink(getSimpleInformation("strYoutube"))}
-        className=""
+        className="rounded-2xl"
         width="100%"
-        height="90%"
+        height="100%"
       ></iframe>
     </div>
   );
