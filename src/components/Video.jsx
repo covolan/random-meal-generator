@@ -2,7 +2,7 @@ export default function Video({ getSimpleInformation }) {
   const generateYTBLink = (providedLink) => {
     if (providedLink) {
       let videoID = providedLink.split("?v=")[1];
-      let videoLink = "http://www.youtube.com/embed/" + videoID;
+      let videoLink = "https://www.youtube.com/embed/" + videoID;
       return videoLink;
     }
   };
