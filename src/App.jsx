@@ -6,8 +6,7 @@ import Instructions from "./components/Instructions";
 import Ingredients from "./components/Ingredients";
 import Video from "./components/Video";
 
-// investigar net::ERR_BLOCKED_BY_CLIENT ytb, don't display video if empty, don't display "|" if no measure.
-
+// investigar net::ERR_BLOCKED_BY_CLIENT ytb, colocar redes no final
 function App() {
   const [currentMeal, setCurrentMeal] = useState([]);
 
@@ -38,7 +37,7 @@ function App() {
         <Button fetchData={fetchData} />
         {currentMeal.length == 0 ? null : (
           <>
-            <div className="meals bg-white md:m-2 mt-10 md:mt-10 md:p-5 rounded-3xl">
+            <div className="meals bg-white md:m-2 mt-10 mb-10 md:mb-10 md:mt-10 md:p-5 rounded-3xl">
               <Title getSimpleInformation={getSimpleInformation} />
               <div className="main-content grid lg:grid-cols-10">
                 <div className="left-items p-2 lg:col-span-3">
