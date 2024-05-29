@@ -1,4 +1,4 @@
-# Static Job Listing
+# Random Meal Generator
 
 ![image](https://i.imgur.com/8FOUBX9.jpg)
 
