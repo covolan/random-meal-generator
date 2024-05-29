@@ -9,10 +9,15 @@ export default function Ingredients({ currentMeal }) {
     // Formatting the ingredients and returning them
     for (let i = 1; i < 20; i++) {
       if (
-        elem[ingredientsName + String(i)].trim() == "" &&
-        elem[measureName + String(i)].trim() == "" 
+        elem[ingredientsName + String(i)] != null &&
+        elem[measureName + String(i)] != null
       ) {
-        break;
+        if (
+          elem[ingredientsName + String(i)].trim() == "" &&
+          elem[measureName + String(i)].trim() == ""
+        ) {
+          break;
+        }
       }
       if (elem[measureName + String(i)].trim() == "") {
         ingredients.push(elem[ingredientsName + String(i)]);
@@ -50,10 +55,8 @@ export default function Ingredients({ currentMeal }) {
   );
 }
 
-function IngredientsTitle () {
-  return(
-    <h2 className="text-xl font-bold text-teal-900 pb-2">Ingredients</h2>
-  )
+function IngredientsTitle() {
+  return <h2 className="text-xl font-bold text-teal-900 pb-2">Ingredients</h2>;
 }
 
 function ToggleableIngredientButton({ ingredient }) {

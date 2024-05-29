@@ -8,6 +8,7 @@ import Video from "./components/Video";
 import Socials from "./components/Socials";
 
 // net::ERR_BLOCKED_BY_CLIENT ytb =>> adblock
+// TODO: make ingredients nested if statement a try catch
 function App() {
   const [currentMeal, setCurrentMeal] = useState([]);
 

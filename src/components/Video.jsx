@@ -8,6 +8,9 @@ export default function Video({ getSimpleInformation }) {
   };
 
   const hasVideo = () => {
+    if (getSimpleInformation("strYoutube") == null) {
+      return false;
+    }
     if (getSimpleInformation("strYoutube").trim() == "") {
       return false;
     }
