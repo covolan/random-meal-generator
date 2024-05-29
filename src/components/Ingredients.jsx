@@ -14,7 +14,7 @@ export default function Ingredients({ currentMeal }) {
       ) {
         break;
       }
-      if (elem[measureName + String(i)] == "") {
+      if (elem[measureName + String(i)].trim() == "") {
         ingredients.push(elem[ingredientsName + String(i)]);
       } else {
         ingredients.push(
