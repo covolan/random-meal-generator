@@ -37,7 +37,7 @@ function App() {
     <>
       <div
         className={
-          "main-div flex flex-col font-sans bg-primary md:mx-5 " +
+          "main-div flex flex-col font-sans bg-primary md:mx-5 max-w-[1440px] " +
           (dataIsEmpty() ? "h-dvh" : "h-full")
         }
       >
