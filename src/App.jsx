@@ -16,7 +16,6 @@ function App() {
       "https://www.themealdb.com/api/json/v1/1/random.php"
     );
     const data = await resp.json();
-    console.log(data.meals);
     setCurrentMeal(data.meals);
   };
 
