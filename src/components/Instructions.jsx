@@ -1,6 +1,8 @@
 export default function Instructions({ getSimpleInformation }) {
-  const getMealInstructions = (meal) => {
+  const getRecipeInstructions = (meal) => {
     let instructions = getSimpleInformation(meal);
+
+    // split each instruction paragraph
     instructions = instructions.split("\r\n");
     return (
       <>
@@ -16,10 +18,17 @@ export default function Instructions({ getSimpleInformation }) {
   };
 
   return (
-    <div className="meal__description text-teal-800 font-medium text-lg md:max-h-[600px] overflow-auto indent-5 text-justify p-3">
-      {" "}
-      <h1 className="text-center text-xl font-bold text-teal-900">Instructions</h1>
-      {getMealInstructions("strInstructions")}
+    <div className="text-teal-800 font-medium text-lg md:max-h-[600px] overflow-auto indent-5 text-justify p-3">
+      <RecipeInstructionsTitle />
+      {getRecipeInstructions("strInstructions")}
     </div>
+  );
+}
+
+function RecipeInstructionsTitle() {
+  return (
+    <h2 className="text-center text-xl font-bold text-teal-900">
+      Instructions
+    </h2>
   );
 }

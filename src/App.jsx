@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Button from "./components/Button";
-import Title from "./components/Title";
+import RecipeTitle from "./components/RecipeTitle";
 import Image from "./components/Image";
 import Instructions from "./components/Instructions";
 import Ingredients from "./components/Ingredients";
 import Video from "./components/Video";
+import Socials from "./components/Socials";
 
-// investigar net::ERR_BLOCKED_BY_CLIENT ytb, colocar redes no final
+// net::ERR_BLOCKED_BY_CLIENT ytb =>> adblock
 function App() {
   const [currentMeal, setCurrentMeal] = useState([]);
 
@@ -19,8 +20,15 @@ function App() {
     setCurrentMeal(data.meals);
   };
 
-  const getSimpleInformation = (element) => {
+  const dataIsEmpty = () => {
     if (currentMeal.length == 0) {
+      return true;
+    }
+    return false;
+  }
+
+  const getSimpleInformation = (element) => {
+    if (dataIsEmpty()) {
       return null;
     }
     return currentMeal[0][element];
@@ -31,28 +39,28 @@ function App() {
       <div
         className={
           "main-div flex flex-col font-sans bg-primary md:mx-5 " +
-          (currentMeal.length == 0 ? "h-dvh" : "h-full")
+          (dataIsEmpty() ? "h-dvh" : "h-full")
         }
       >
         <Button fetchData={fetchData} />
-        {currentMeal.length == 0 ? null : (
+        {dataIsEmpty() ? null : (
           <>
-            <div className="meals bg-white md:m-2 mt-10 mb-10 md:mb-10 md:mt-10 md:p-5 rounded-3xl">
-              <Title getSimpleInformation={getSimpleInformation} />
-              <div className="main-content grid lg:grid-cols-10">
-                <div className="left-items p-2 lg:col-span-3">
+            <div className="bg-white md:m-2 mt-10 mb-10 md:mb-10 md:mt-10 md:p-5 rounded-3xl">
+              <RecipeTitle getSimpleInformation={getSimpleInformation} />
+              <div id="left-column" className="grid lg:grid-cols-10">
+                <div className="p-2 lg:col-span-3">
                   <Image
                     currentMeal={currentMeal}
                     getSimpleInformation={getSimpleInformation}
                   />
                   <Ingredients currentMeal={currentMeal} />
                 </div>
-                <div className="right-items p-2 lg:col-span-7">
+                <div id="right-column" className="p-2 lg:col-span-7">
                   <Instructions getSimpleInformation={getSimpleInformation} />
                   <Video getSimpleInformation={getSimpleInformation} />
                 </div>
               </div>
-              {/* <div className="meal__extra md:rounded-br-lg background-green-pastel col-span-2"></div> */}
+              <Socials />
             </div>
           </>
         )}

@@ -2,25 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --bege: #ecd8b5e5;
-    --green-gray: #2C2C26;
-    --green-pastel: #546d73d3;
-    --white-gray: #DCD9D2;
-    --sapphire: #004DC3;
-    --brown: #7C5933;
-}
-
 .bg-primary {
     background-color: rgba(255, 255, 255, 0.45);
-}
-
-.background-bege {
-    background-color: var(--bege);
-}
-
-.background-green-pastel {
-    background-color: var(--green-pastel);
 }
 
 body {

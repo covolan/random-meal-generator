@@ -16,7 +16,7 @@ export default function Video({ getSimpleInformation }) {
 
   if(hasVideo()) {
     return (
-      <div className="meal__video p-3 content-center h-[300px] sm:h-[400px] md:h-[500px] ">
+      <div className="p-3 content-center h-[300px] sm:h-[400px] md:h-[500px] ">
         <iframe
           src={generateYTBLink(getSimpleInformation("strYoutube"))}
           className="rounded-2xl"
@@ -35,7 +35,7 @@ export default function Video({ getSimpleInformation }) {
 
 function NoVideo() {
   return (
-    <div className="meal__video bg-slate-100 rounded-2xl w-full p-3 content-center h-[300px] sm:h-[400px] md:h-[500px] ">
+    <div className="bg-slate-100 rounded-2xl w-full p-3 content-center h-[300px] sm:h-[400px] md:h-[500px] ">
       <h2 className="font-bold text-2xl text-center text-teal-900">NO VIDEO AVAILABLE :( </h2>
       </div>
   );
