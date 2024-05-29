@@ -8,7 +8,7 @@ export default function Video({ getSimpleInformation }) {
   };
 
   const hasVideo = () => {
-    if (getSimpleInformation("strYoutube") == "") {
+    if (getSimpleInformation("strYoutube").trim() == "") {
       return false;
     }
     return true;
